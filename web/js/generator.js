@@ -68,8 +68,14 @@ Rate your confidence (0-100%) in the solution.`;
     }
 };
 
-function generatePrompt(inputs) {
+function generatePrompt(inputs, userTier = 'free') {
     const frameworkKey = inputs.framework || "BASIC";
+    
+    // Feature Gating Logic
+    if (userTier === 'free' && frameworkKey !== 'BASIC') {
+        return "LOCKED_FEATURE";
+    }
+
     const framework = FRAMEWORKS[frameworkKey] || FRAMEWORKS.BASIC;
     return framework.generate(inputs);
 }
