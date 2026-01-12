@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unit Testing Prompts | PromptHub Blog</title>
+    <meta name="description" content="Moving from 'vibes-based' evaluation to deterministic assertions for your prompts.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased">
+    <nav class="bg-white/80 backdrop-blur-md fixed w-full z-50 border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between">
+            <a href="../index.html" class="font-bold text-xl text-slate-900">PromptHub</a>
+            <a href="../index.html#generator" class="text-indigo-600 font-bold">Try Generator</a>
+        </div>
+    </nav>
+
+    <article class="pt-32 pb-20 px-4 max-w-3xl mx-auto prose prose-lg prose-indigo">
+        <a href="index.html" class="no-underline text-sm font-bold text-slate-500 uppercase mb-4 block"><i class="fas fa-arrow-left"></i> Blog</a>
+        <h1>Unit Testing Prompts: Moving Beyond "Vibes"</h1>
+        
+        <p class="lead">Software engineering has TDD (Test Driven Development). Prompt engineering usually has "I looked at it and it seems okay." This must change.</p>
+
+        <h2>Defining Success Metrics</h2>
+        <p>You cannot improve what you cannot measure. A prompt like "Write a funny email" is untestable. A prompt like "Write an email containing fewer than 50 words and using one pun" is testable.</p>
+
+        <h3>Assertions for LLMs</h3>
+        <ul>
+            <li><strong>Length Check:</strong> `len(output) < 200`</li>
+            <li><strong>Format Check:</strong> `is_valid_json(output)`</li>
+            <li><strong>Keyword Check:</strong> `"unsubscribe" in output`</li>
+            <li><strong>Semantic Check:</strong> Use a cheaper LLM (like GPT-3.5) to grade the output of a stronger LLM.</li>
+        </ul>
+
+        <h2>The Golden Set</h2>
+        <p>Maintain a dataset of 50 "Golden Inputs" and their expected outputs. Every time you change your prompt, run it against the Golden Set to check for regression.</p>
+
+        <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-500 my-8">
+            <strong>Start right:</strong> Use our "JSON Format" templates to make your outputs machine-readable and testable from day one.
+        </div>
+        
+        <a href="../index.html#generator" class="no-underline inline-block px-8 py-4 bg-indigo-600 text-white font-bold rounded-lg w-full text-center">Generate Testable Prompts</a>
+    </article>
+</body>
+</html>

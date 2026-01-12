@@ -30,4 +30,40 @@
       <changefreq>weekly</changefreq>
       <priority>0.7</priority>
    </url>
+   <url>
+      <loc>https://prompt-mastery-hub.netlify.app/blog/mathematics-of-persona.html</loc>
+      <lastmod>2026-01-12</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://prompt-mastery-hub.netlify.app/blog/chain-of-thought-guide.html</loc>
+      <lastmod>2026-01-12</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://prompt-mastery-hub.netlify.app/blog/prompt-injection-defense.html</loc>
+      <lastmod>2026-01-12</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://prompt-mastery-hub.netlify.app/blog/rag-context-optimization.html</loc>
+      <lastmod>2026-01-12</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://prompt-mastery-hub.netlify.app/blog/unit-testing-prompts.html</loc>
+      <lastmod>2026-01-12</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://prompt-mastery-hub.netlify.app/blog/few-shot-guide.html</loc>
+      <lastmod>2026-01-12</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+   </url>
 </urlset>

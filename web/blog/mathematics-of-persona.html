@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Mathematics of Persona: Why "Act as..." Works | PromptHub Blog</title>
+    <meta name="description" content="Technical analysis of how persona assignment alters the probability distribution of LLM next-token prediction.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased">
+    <!-- Nav (Placeholder) -->
+    <nav class="bg-white/80 backdrop-blur-md fixed w-full z-50 border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between">
+            <a href="../index.html" class="font-bold text-xl text-slate-900">PromptHub</a>
+            <a href="../index.html#generator" class="text-indigo-600 font-bold">Try Generator</a>
+        </div>
+    </nav>
+
+    <article class="pt-32 pb-20 px-4 max-w-3xl mx-auto prose prose-lg prose-indigo">
+        <a href="index.html" class="no-underline text-sm font-bold text-slate-500 uppercase mb-4 block"><i class="fas fa-arrow-left"></i> Blog</a>
+        <h1>The Mathematics of Persona: Why "Act as..." Works</h1>
+        
+        <p class="lead">Assigning a persona isn't roleplay. It's a coordinate shift in the model's latent space.</p>
+
+        <h2>The Latent Space Theory</h2>
+        <p>Large Language Models (LLMs) don't "know" things; they model relationships between tokens in a high-dimensional vector space. When you ask a generic question like "Write a function to connect to a database," the model samples from the <em>average</em> of its training data. This average includes bad tutorials, outdated forums, and insecure code snippets.</p>
+
+        <p>However, when you prepend <strong>"Act as a Senior Backend Engineer,"</strong> you are effectively applying a vector transformation. You are constraining the search space to a specific cluster of high-quality, professional tokens.</p>
+
+        <h2>Impact on Probability Distribution</h2>
+        <p>In a standard distribution, the token `print` might have a 40% probability for logging errors. In the "Senior Engineer" cluster, the token `logging.error` becomes the dominant probability (85%).</p>
+
+        <h3>Key Benefits of Persona constraints:</h3>
+        <ul>
+            <li><strong>Vocabulary Shift:</strong> Uses precise jargon (e.g., "idempotency") instead of vague terms.</li>
+            <li><strong>Constraint Adherence:</strong> Professionals follow rules; the model mimics this adherence.</li>
+            <li><strong>Assumption Handling:</strong> An expert persona assumes you want production standards, not a "Hello World" example.</li>
+        </ul>
+
+        <h2>Applying This with DEPTH</h2>
+        <p>Our <a href="../index.html#generator">DEPTH Engine</a> leverages this by not just assigning one persona, but a <em>panel</em>. By combining "Security Auditor" with "Product Manager," we force the model to intersect two high-value vector clusters, resulting in output that is both secure and user-centric.</p>
+
+        <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-500 my-8">
+            <strong>Try it now:</strong> Use the generator to switch roles from "Junior Dev" to "Staff Engineer" and watch the code quality jump instantly.
+        </div>
+        
+        <a href="../index.html#generator" class="no-underline inline-block px-8 py-4 bg-indigo-600 text-white font-bold rounded-lg w-full text-center">Generate Persona-Based Prompts</a>
+    </article>
+</body>
+</html>

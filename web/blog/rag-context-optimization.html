@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Context Window Trap | PromptHub Blog</title>
+    <meta name="description" content="Why stuffing your context window hurts performance (Lost in the Middle phenomenon) and how to optimize RAG.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased">
+    <nav class="bg-white/80 backdrop-blur-md fixed w-full z-50 border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between">
+            <a href="../index.html" class="font-bold text-xl text-slate-900">PromptHub</a>
+            <a href="../index.html#generator" class="text-indigo-600 font-bold">Try Generator</a>
+        </div>
+    </nav>
+
+    <article class="pt-32 pb-20 px-4 max-w-3xl mx-auto prose prose-lg prose-indigo">
+        <a href="index.html" class="no-underline text-sm font-bold text-slate-500 uppercase mb-4 block"><i class="fas fa-arrow-left"></i> Blog</a>
+        <h1>The Context Window Trap: More Data != Better Answers</h1>
+        
+        <p class="lead">Just because Gemini 1.5 Pro has a 2-million token window doesn't mean you should paste your entire database into it.</p>
+
+        <h2>The "Lost in the Middle" Phenomenon</h2>
+        <p>Research shows that LLMs pay the most attention to the beginning and the end of the prompt. Information buried in the middle of a massive context dump often gets ignored or "hallucinated away."</p>
+
+        <h2>RAG Optimization Strategies</h2>
+        <p>Retrieval Augmented Generation (RAG) is the art of fetching only the <em>relevant</em> context. But prompts play a huge role here.</p>
+        
+        <h3>1. Structured Context Injection</h3>
+        <p>Don't just dump raw text. Use JSON or XML to label the data.</p>
+        <pre><code>
+&lt;context&gt;
+  &lt;document id="1"&gt;...&lt;/document&gt;
+  &lt;document id="2"&gt;...&lt;/document&gt;
+&lt;/context&gt;
+        </code></pre>
+
+        <h3>2. "Needle in a Haystack" Prompts</h3>
+        <p>Explicitly instruct the model: "Answer using ONLY the provided context. If the answer is not in the context, state 'I do not know'." This reduces confident hallucinations.</p>
+
+        <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-500 my-8">
+            <strong>Structure matters:</strong> Our generator formats your context data with clear XML delimiters to maximize retrieval accuracy.
+        </div>
+        
+        <a href="../index.html#generator" class="no-underline inline-block px-8 py-4 bg-indigo-600 text-white font-bold rounded-lg w-full text-center">Optimize Your Context</a>
+    </article>
+</body>
+</html>

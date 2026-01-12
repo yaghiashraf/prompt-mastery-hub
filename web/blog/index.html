@@ -41,7 +41,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             
-            <!-- Article 1 -->
+            <!-- Article 1: Depth vs Basic -->
             <article class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition flex flex-col">
                 <div class="h-48 bg-slate-800 flex items-center justify-center">
                     <i class="fas fa-layer-group text-6xl text-indigo-500 opacity-50"></i>
@@ -52,7 +52,7 @@
                         <a href="depth-vs-basic.html" class="hover:text-indigo-600 transition">Why "Simple" Prompts Break Production</a>
                     </h2>
                     <p class="text-slate-500 mb-6 flex-grow">
-                        We analyzed 1,000 code generation tasks. The "Standard" prompt failed 40% of the time. The DEPTH framework failed 2%. Here is the data.
+                        We analyzed 1,000 code tasks. Standard prompts failed 40% of the time. The DEPTH framework failed 2%.
                     </p>
                     <a href="depth-vs-basic.html" class="inline-flex items-center text-indigo-600 font-bold hover:text-indigo-800">
                         Read Analysis <i class="fas fa-arrow-right ml-2"></i>
@@ -60,25 +60,119 @@
                 </div>
             </article>
 
-            <!-- Article 2 (Placeholder) -->
-            <article class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition flex flex-col opacity-75">
-                <div class="h-48 bg-slate-100 flex items-center justify-center">
-                    <i class="fas fa-robot text-6xl text-slate-300"></i>
+            <!-- Article 2: Mathematics of Persona -->
+            <article class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition flex flex-col">
+                <div class="h-48 bg-slate-800 flex items-center justify-center">
+                    <i class="fas fa-calculator text-6xl text-purple-500 opacity-50"></i>
                 </div>
                 <div class="p-8 flex-1 flex flex-col">
-                    <div class="text-sm text-slate-500 font-bold mb-2 uppercase tracking-wide">Tutorial (Coming Soon)</div>
+                    <div class="text-sm text-purple-600 font-bold mb-2 uppercase tracking-wide">Theory</div>
                     <h2 class="text-2xl font-bold text-slate-900 mb-3">
-                        Building Self-Healing Agents
+                        <a href="mathematics-of-persona.html" class="hover:text-indigo-600 transition">The Mathematics of Persona</a>
                     </h2>
                     <p class="text-slate-500 mb-6 flex-grow">
-                        How to use the Recursive Prompt pattern to force models to critique and fix their own code before showing it to you.
+                        How assigning a specific role alters the vector space probability distribution of LLM outputs.
                     </p>
-                    <span class="text-slate-400 font-bold cursor-not-allowed">
-                        Coming Soon
-                    </span>
+                    <a href="mathematics-of-persona.html" class="inline-flex items-center text-purple-600 font-bold hover:text-purple-800">
+                        Read Article <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
             </article>
 
+            <!-- Article 3: Chain of Thought -->
+            <article class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition flex flex-col">
+                <div class="h-48 bg-slate-800 flex items-center justify-center">
+                    <i class="fas fa-link text-6xl text-blue-500 opacity-50"></i>
+                </div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <div class="text-sm text-blue-600 font-bold mb-2 uppercase tracking-wide">Tutorial</div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-3">
+                        <a href="chain-of-thought-guide.html" class="hover:text-indigo-600 transition">Chain-of-Thought Deep Dive</a>
+                    </h2>
+                    <p class="text-slate-500 mb-6 flex-grow">
+                        Forcing logic into probabilistic models to solve complex reasoning tasks and math problems.
+                    </p>
+                    <a href="chain-of-thought-guide.html" class="inline-flex items-center text-blue-600 font-bold hover:text-blue-800">
+                        Read Guide <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 4: Prompt Injection -->
+            <article class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition flex flex-col">
+                <div class="h-48 bg-slate-800 flex items-center justify-center">
+                    <i class="fas fa-shield-alt text-6xl text-red-500 opacity-50"></i>
+                </div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <div class="text-sm text-red-600 font-bold mb-2 uppercase tracking-wide">Security</div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-3">
+                        <a href="prompt-injection-defense.html" class="hover:text-indigo-600 transition">Prompt Injection Defense 101</a>
+                    </h2>
+                    <p class="text-slate-500 mb-6 flex-grow">
+                        How to secure your LLM applications against jailbreaks and prompt overriding attacks.
+                    </p>
+                    <a href="prompt-injection-defense.html" class="inline-flex items-center text-red-600 font-bold hover:text-red-800">
+                        Read Article <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 5: RAG Optimization -->
+            <article class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition flex flex-col">
+                <div class="h-48 bg-slate-800 flex items-center justify-center">
+                    <i class="fas fa-database text-6xl text-yellow-500 opacity-50"></i>
+                </div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <div class="text-sm text-yellow-600 font-bold mb-2 uppercase tracking-wide">Optimization</div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-3">
+                        <a href="rag-context-optimization.html" class="hover:text-indigo-600 transition">The Context Window Trap</a>
+                    </h2>
+                    <p class="text-slate-500 mb-6 flex-grow">
+                        Why stuffing your context window hurts performance ("Lost in the Middle") and how to fix it.
+                    </p>
+                    <a href="rag-context-optimization.html" class="inline-flex items-center text-yellow-600 font-bold hover:text-yellow-800">
+                        Read Article <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 6: Unit Testing -->
+            <article class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition flex flex-col">
+                <div class="h-48 bg-slate-800 flex items-center justify-center">
+                    <i class="fas fa-vial text-6xl text-teal-500 opacity-50"></i>
+                </div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <div class="text-sm text-teal-600 font-bold mb-2 uppercase tracking-wide">QA / Testing</div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-3">
+                        <a href="unit-testing-prompts.html" class="hover:text-indigo-600 transition">Unit Testing Prompts</a>
+                    </h2>
+                    <p class="text-slate-500 mb-6 flex-grow">
+                        Moving from "vibes-based" evaluation to deterministic assertions and regression testing.
+                    </p>
+                    <a href="unit-testing-prompts.html" class="inline-flex items-center text-teal-600 font-bold hover:text-teal-800">
+                        Read Article <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </article>
+
+             <!-- Article 7: Few-Shot -->
+             <article class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition flex flex-col">
+                <div class="h-48 bg-slate-800 flex items-center justify-center">
+                    <i class="fas fa-graduation-cap text-6xl text-pink-500 opacity-50"></i>
+                </div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <div class="text-sm text-pink-600 font-bold mb-2 uppercase tracking-wide">Strategy</div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-3">
+                        <a href="few-shot-guide.html" class="hover:text-indigo-600 transition">Zero-Shot vs. Few-Shot</a>
+                    </h2>
+                    <p class="text-slate-500 mb-6 flex-grow">
+                        Data-backed analysis of when to provide examples and when to let the model improvise.
+                    </p>
+                    <a href="few-shot-guide.html" class="inline-flex items-center text-pink-600 font-bold hover:text-pink-800">
+                        Read Article <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </article>
         </div>
     </div>
 

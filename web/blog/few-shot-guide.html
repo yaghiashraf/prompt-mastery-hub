@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zero-Shot vs. Few-Shot Prompting | PromptHub Blog</title>
+    <meta name="description" content="Data-backed analysis of when to use Zero-Shot vs Few-Shot prompting for production tasks.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased">
+    <nav class="bg-white/80 backdrop-blur-md fixed w-full z-50 border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between">
+            <a href="../index.html" class="font-bold text-xl text-slate-900">PromptHub</a>
+            <a href="../index.html#generator" class="text-indigo-600 font-bold">Try Generator</a>
+        </div>
+    </nav>
+
+    <article class="pt-32 pb-20 px-4 max-w-3xl mx-auto prose prose-lg prose-indigo">
+        <a href="index.html" class="no-underline text-sm font-bold text-slate-500 uppercase mb-4 block"><i class="fas fa-arrow-left"></i> Blog</a>
+        <h1>Zero-Shot vs. Few-Shot: The ROI of Examples</h1>
+        
+        <p class="lead">Providing examples is the single highest-ROI activity in prompt engineering. Here is why.</p>
+
+        <h2>Definitions</h2>
+        <ul>
+            <li><strong>Zero-Shot:</strong> Asking the model to do something without examples. ("Classify this tweet.")</li>
+            <li><strong>Few-Shot:</strong> Providing 3-5 examples of input -> output pairs. ("Tweet: 'I love this!' -> Positive. Tweet: 'This sucks.' -> Negative. Classify this: 'It's okay.'")</li>
+        </ul>
+
+        <h2>The Performance Gap</h2>
+        <p>On complex reasoning tasks (like converting natural language to SQL), Few-Shot prompting can improve accuracy from 20% to over 80%. It establishes a pattern for the model to follow, drastically reducing the search space.</p>
+
+        <h2>When to use which?</h2>
+        <p><strong>Use Zero-Shot</strong> for creative writing, brainstorming, or simple summaries.</p>
+        <p><strong>Use Few-Shot</strong> for classification, code generation, data extraction, or anything requiring a rigid format.</p>
+
+        <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-500 my-8">
+            <strong>Don't start from zero:</strong> Our templates are designed to easily accept Few-Shot examples in the "Context" field.
+        </div>
+        
+        <a href="../index.html#generator" class="no-underline inline-block px-8 py-4 bg-indigo-600 text-white font-bold rounded-lg w-full text-center">Build Few-Shot Prompts</a>
+    </article>
+</body>
+</html>
