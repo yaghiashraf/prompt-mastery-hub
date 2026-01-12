@@ -13,10 +13,8 @@
   CONTEXT = "staging"
   SITE_NAME = "Prompt Mastery Hub (Staging)"
 
-# Redirects
+# Standard SPA Redirect (Fixes 404s on refresh/sub-routes)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = false
-  conditions = {Role = ["admin"]}
