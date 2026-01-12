@@ -291,6 +291,125 @@
         </div>
     </section>
 
+    <!-- How It Works -->
+    <section class="py-20 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900">Under the Hood</h2>
+                <p class="mt-4 text-xl text-slate-500">How PromptHub transforms your intent into a production-ready artifact.</p>
+            </div>
+            <div class="relative">
+                <!-- Connecting Line -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-indigo-100 -translate-y-1/2 z-0"></div>
+                
+                <div class="grid md:grid-cols-3 gap-8 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-100 text-center">
+                        <div class="w-16 h-16 mx-auto bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 ring-8 ring-indigo-50">1</div>
+                        <h3 class="text-xl font-bold mb-2">Define Intent</h3>
+                        <p class="text-slate-500 text-sm">You provide the raw task (e.g., "Write a SQL query") and the role.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-100 text-center">
+                        <div class="w-16 h-16 mx-auto bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 ring-8 ring-indigo-50">2</div>
+                        <h3 class="text-xl font-bold mb-2">Orchestrate Experts</h3>
+                        <p class="text-slate-500 text-sm">The <strong>DEPTH Engine</strong> dynamically assigns sub-agents (e.g., "Database Admin" + "Security Auditor") to the context.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-100 text-center">
+                        <div class="w-16 h-16 mx-auto bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 ring-8 ring-indigo-50">3</div>
+                        <h3 class="text-xl font-bold mb-2">Generate Artifact</h3>
+                        <p class="text-slate-500 text-sm">You get a structured, recursive prompt optimized for GPT-4/Claude that self-corrects hallucinations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900">Built for Professionals</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Developers -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mr-4"><i class="fas fa-terminal"></i></div>
+                        <h3 class="text-xl font-bold">Developers</h3>
+                    </div>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Automate Unit Test generation.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Block insecure code in PRs.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Generate typed JSON schemas.</li>
+                    </ul>
+                </div>
+                <!-- Writers -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-pink-100 text-pink-600 rounded-lg flex items-center justify-center mr-4"><i class="fas fa-pen-nib"></i></div>
+                        <h3 class="text-xl font-bold">Content Creators</h3>
+                    </div>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Force "Show, Don't Tell" writing.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> SEO-optimized blog outlines.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Tone consistency checks.</li>
+                    </ul>
+                </div>
+                <!-- Managers -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center mr-4"><i class="fas fa-briefcase"></i></div>
+                        <h3 class="text-xl font-bold">Product Managers</h3>
+                    </div>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Draft PRDs with edge cases.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Synthesize user feedback.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Competitive analysis matrices.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compatibility -->
+    <section class="py-12 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-500 font-bold uppercase tracking-widest text-sm mb-8">Works perfectly with</p>
+            <div class="flex flex-wrap justify-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="flex items-center gap-2 text-xl font-bold text-slate-700"><i class="fas fa-robot"></i> ChatGPT (GPT-4o)</div>
+                <div class="flex items-center gap-2 text-xl font-bold text-slate-700"><i class="fas fa-brain"></i> Claude 3.5 Sonnet</div>
+                <div class="flex items-center gap-2 text-xl font-bold text-slate-700"><i class="fas fa-star"></i> Gemini 1.5 Pro</div>
+                <div class="flex items-center gap-2 text-xl font-bold text-slate-700"><i class="fas fa-server"></i> LocalLLaMA (Ollama)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-extrabold text-center mb-12">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+                <!-- Q1 -->
+                <div class="border border-slate-200 rounded-lg p-6 hover:shadow-md transition">
+                    <h3 class="font-bold text-lg mb-2">Do I need an OpenAI API key?</h3>
+                    <p class="text-slate-600">No. PromptHub generates the <em>text prompt</em> for you. You simply copy-paste it into your preferred LLM chat interface or API call. It runs entirely in your browser.</p>
+                </div>
+                <!-- Q2 -->
+                <div class="border border-slate-200 rounded-lg p-6 hover:shadow-md transition">
+                    <h3 class="font-bold text-lg mb-2">Is my data safe?</h3>
+                    <p class="text-slate-600">Yes. The prompt generation happens 100% client-side using JavaScript. We do not store your inputs, context, or generated prompts on any server.</p>
+                </div>
+                <!-- Q3 -->
+                <div class="border border-slate-200 rounded-lg p-6 hover:shadow-md transition">
+                    <h3 class="font-bold text-lg mb-2">What is the "Lifetime Deal"?</h3>
+                    <p class="text-slate-600">For a limited time, you can pay a one-time fee of $69 to unlock all Pro features (DEPTH Engine, CoT, Recursive Agents) forever, instead of paying the $9/month subscription.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section -->
     <section id="pricing" class="py-24 bg-slate-900 text-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
