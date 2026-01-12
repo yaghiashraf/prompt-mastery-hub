@@ -3,21 +3,20 @@
   command = "echo 'Building Site...'"
 
 # Production Context
-[context.production]
-  environment = { NODE_VERSION = "20", CONTEXT = "production" }
+[context.production.environment]
+  NODE_VERSION = "20"
+  CONTEXT = "production"
 
-# Staging Context (Deploy Previews & Branch Deploys)
-[context.staging]
-  environment = { NODE_VERSION = "20", CONTEXT = "staging" }
-
-# Branch-specific override (if branch is named 'staging')
+# Staging Context
 [context.staging.environment]
+  NODE_VERSION = "20"
+  CONTEXT = "staging"
   SITE_NAME = "Prompt Mastery Hub (Staging)"
 
-# Redirects for clean URLs
+# Redirects
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
   force = false
-  conditions = {Role = ["admin"]} # Example of role-based access if using Netlify Identity
+  conditions = {Role = ["admin"]}
