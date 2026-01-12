@@ -27,43 +27,61 @@ ${data.context || "[Insert Content Here]"}
             return `Act as a ${data.role || "Expert"}.
 Your task is to ${data.task}.
 
-Before providing the final answer, please think step-by-step:
-1. Break down the problem into core components.
-2. Analyze the constraints: ${data.context}.
-3. Draft a preliminary solution.
-4. Refine the solution based on the tone: ${data.tone}.
+Before providing the final answer, please think step-by-step in a scratchpad:
+1.  **Analyze Request:** Identify the core question and constraints (${data.context}).
+2.  **Knowledge Retrieval:** Recall relevant principles regarding ${data.task}.
+3.  **Step-by-Step Reasoning:**
+    - Step 1: ...
+    - Step 2: ...
+4.  **Self-Correction:** Critique the draft for ${data.tone} tone.
 
-Finally, provide the output in ${data.format} format.`;
+Finally, output ONLY the refined response in ${data.format} format.`;
         }
     },
     DEPTH: {
         name: "DEPTH Framework (Advanced)",
         id: "depth",
         generate: (data) => {
+            const role = (data.role || "").toLowerCase();
+            let experts = ["Critical Reviewer", "User Advocate"];
+
+            // Dynamic Expert Assignment
+            if (role.includes("dev") || role.includes("engineer") || role.includes("code") || role.includes("architect")) {
+                experts = ["Security Auditor", "Performance Specialist"];
+            } else if (role.includes("writer") || role.includes("copy") || role.includes("content") || role.includes("marketing")) {
+                experts = ["SEO Strategist", "Editor-in-Chief"];
+            } else if (role.includes("manager") || role.includes("exec") || role.includes("business")) {
+                experts = ["Financial Analyst", "Risk Manager"];
+            } else if (role.includes("data") || role.includes("analyst")) {
+                experts = ["Data Privacy Officer", "Visualization Expert"];
+            }
+
             return `# DEPTH Prompting Framework
 
-## 1. Define Perspectives
+## 1. Define Perspectives (The Panel)
 Act as a panel of experts including:
-- ${data.role || "Primary Expert"}
-- A Critic/Reviewer
-- A User Advocate
+- **Lead:** ${data.role || "Primary Expert"}
+- **Expert 2:** ${experts[0]}
+- **Expert 3:** ${experts[1]}
 
 ## 2. Establish Success Metrics
 The output must achieve the following:
-- Clear resolution of: ${data.task}
-- Adherence to format: ${data.format}
+- Primary Goal: ${data.task}
+- Format Requirement: ${data.format}
+- Tone Calibration: ${data.tone}
 
 ## 3. Provide Context
 ${data.context || "[Insert detailed context here]"}
 
-## 4. Task Breakdown
+## 4. Task Breakdown (Cognitive Workflow)
 Execute the following steps sequentially:
-1. Analyze the context from all expert perspectives.
-2. Debate the best approach.
-3. Synthesize the final ${data.format} output.
+1.  **Deep Analysis:** Each expert analyzes the context from their unique perspective.
+2.  **Debate:** The ${experts[0]} critiques the Lead's initial approach.
+3.  **Synthesis:** Merge the best insights into a unified strategy.
+4.  **Final Polish:** Format the output as ${data.format}.
 
 ## 5. Human Feedback Loop
-Rate your confidence (0-100%) in the solution.`;
+Rate your confidence (0-100%) in the solution and flag any missing information.`;
         }
     }
 };
