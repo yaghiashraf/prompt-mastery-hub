@@ -2,44 +2,170 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Unit Testing Prompts | PromptHub Blog</title>
-    <meta name="description" content="Moving from 'vibes-based' evaluation to deterministic assertions for your prompts.">
+    <title>Unit Testing Prompts: Moving Beyond "Vibes" | PromptHub Blog</title>
+    <meta name="description" content="How to implement deterministic unit tests for your LLM prompts using Python and Pytest. Stop guessing and start measuring.">
+    <meta name="keywords" content="Prompt Engineering Testing, LLM Unit Tests, Pytest for AI, Eval Driven Development">
+    <meta name="author" content="PromptHub Engineering Team">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </head>
-<body class="bg-white text-slate-900 font-sans antialiased">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+
     <nav class="bg-white/80 backdrop-blur-md fixed w-full z-50 border-b border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between">
-            <a href="../index.html" class="font-bold text-xl text-slate-900">PromptHub</a>
-            <a href="../index.html#generator" class="text-indigo-600 font-bold">Try Generator</a>
+        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center hover:text-indigo-600 transition">
+                <i class="fas fa-brain text-indigo-600 text-xl mr-2"></i>
+                <span class="font-bold text-lg text-slate-900">PromptHub</span>
+            </a>
+            <a href="../index.html#generator" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition">Try Generator</a>
         </div>
     </nav>
 
-    <article class="pt-32 pb-20 px-4 max-w-3xl mx-auto prose prose-lg prose-indigo">
-        <a href="index.html" class="no-underline text-sm font-bold text-slate-500 uppercase mb-4 block"><i class="fas fa-arrow-left"></i> Blog</a>
-        <h1>Unit Testing Prompts: Moving Beyond "Vibes"</h1>
-        
-        <p class="lead">Software engineering has TDD (Test Driven Development). Prompt engineering usually has "I looked at it and it seems okay." This must change.</p>
+    <article class="pt-32 pb-20 px-4 max-w-3xl mx-auto">
+        <nav class="flex text-sm text-slate-500 mb-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center"><a href="../index.html" class="hover:text-indigo-600">Home</a></li>
+                <li><i class="fas fa-chevron-right text-xs"></i></li>
+                <li><a href="index.html" class="hover:text-indigo-600">Blog</a></li>
+                <li><i class="fas fa-chevron-right text-xs"></i></li>
+                <li class="font-bold text-slate-700">Testing</li>
+            </ol>
+        </nav>
 
-        <h2>Defining Success Metrics</h2>
-        <p>You cannot improve what you cannot measure. A prompt like "Write a funny email" is untestable. A prompt like "Write an email containing fewer than 50 words and using one pun" is testable.</p>
+        <header class="mb-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
+                Unit Testing Prompts: Moving Beyond "Vibes"
+            </h1>
+            <div class="flex items-center text-slate-500 text-sm border-b border-slate-200 pb-8">
+                <span class="mr-4"><i class="far fa-calendar mr-2"></i> Jan 12, 2026</span>
+                <span class="mr-4"><i class="far fa-clock mr-2"></i> 6 min read</span>
+                <span class="px-2 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-bold uppercase">QA / Testing</span>
+            </div>
+        </header>
 
-        <h3>Assertions for LLMs</h3>
-        <ul>
-            <li><strong>Length Check:</strong> `len(output) < 200`</li>
-            <li><strong>Format Check:</strong> `is_valid_json(output)`</li>
-            <li><strong>Keyword Check:</strong> `"unsubscribe" in output`</li>
-            <li><strong>Semantic Check:</strong> Use a cheaper LLM (like GPT-3.5) to grade the output of a stronger LLM.</li>
-        </ul>
+        <div class="prose prose-lg prose-indigo max-w-none text-slate-700">
+            <p class="lead text-xl font-medium text-slate-600">
+                Software engineering has TDD (Test Driven Development). Prompt engineering usually has "I looked at it and it seems okay." This is why your production app breaks.
+            </p>
 
-        <h2>The Golden Set</h2>
-        <p>Maintain a dataset of 50 "Golden Inputs" and their expected outputs. Every time you change your prompt, run it against the Golden Set to check for regression.</p>
+            <h2>The "Vibes-Based" Evaluation Trap</h2>
+            <p>
+                When you tweak a prompt to fix one edge case, you often silently break three others. This is called regression. Without an automated test suite, you are flying blind.
+            </p>
 
-        <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-500 my-8">
-            <strong>Start right:</strong> Use our "JSON Format" templates to make your outputs machine-readable and testable from day one.
+            <h2>Defining Assertions for LLMs</h2>
+            <p>
+                How do you test a non-deterministic output? You test the <strong>properties</strong> of the output, not the exact string.
+            </p>
+            <ul>
+                <li><strong>Length Check:</strong> Is `len(output) < 200`?</li>
+                <li><strong>Format Check:</strong> Does `json.loads(output)` succeed?</li>
+                <li><strong>Keyword Check:</strong> Does `"unsubscribe"` exist in the text?</li>
+                <li><strong>Semantic Check:</strong> (Advanced) Use a cheaper LLM (like GPT-4o-mini) to grade the output of a stronger LLM.</li>
+            </ul>
+
+            <h2>Interactive Demo: Run a Prompt Test</h2>
+            <p>
+                Click "Run Test" to simulate a Pytest execution against a generated email output.
+            </p>
+
+            <!-- Interactive Widget -->
+            <div class="my-10 bg-slate-900 rounded-xl shadow-2xl overflow-hidden border border-slate-700">
+                <div class="flex items-center px-4 py-2 bg-slate-800 border-b border-slate-700">
+                    <span class="text-xs text-slate-400 font-mono">tests/test_email_generator.py</span>
+                    <button onclick="runTest()" id="run-btn" class="ml-auto px-3 py-1 bg-green-600 hover:bg-green-700 text-white text-xs font-bold rounded transition">
+                        <i class="fas fa-play mr-1"></i> Run Test
+                    </button>
+                </div>
+                <div class="p-0">
+                    <pre><code class="language-python">def test_email_generation():
+    # 1. Arrange
+    prompt = "Write a polite decline email. JSON format."
+    
+    # 2. Act
+    output = llm.generate(prompt) 
+    # Simulated Output: '{"subject": "No thanks", "body": "..."}'
+    
+    # 3. Assert
+    assert is_valid_json(output), "Output must be JSON"
+    data = json.loads(output)
+    assert "polite" in analyze_tone(data['body'])
+    assert len(data['body']) < 500</code></pre>
+                </div>
+                <div id="test-console" class="bg-black p-4 font-mono text-xs text-slate-300 border-t border-slate-700 min-h-[100px]">
+                    <span class="text-slate-500">$ pytest tests/test_email_generator.py</span><br>
+                    <span id="test-output">Waiting to run...</span>
+                </div>
+            </div>
+
+            <h2>The Golden Set Strategy</h2>
+            <p>
+                To do this at scale, maintain a "Golden Set" of 50 input examples and their expected behaviors.
+            </p>
+            <ol>
+                <li><strong>Inputs:</strong> A CSV of 50 varied user requests.</li>
+                <li><strong>Expectations:</strong> "Must return JSON", "Must not mention competitors", "Must be under 50 words".</li>
+                <li><strong>CI/CD:</strong> Run this suite on every Pull Request that modifies a prompt file.</li>
+            </ol>
+
+            <h2>Tools for the Job</h2>
+            <p>
+                You don't need fancy SaaS tools. Python's <code>pytest</code> and <code>assert</code> are often enough. For semantic grading, libraries like `promptfoo` are excellent.
+            </p>
         </div>
-        
-        <a href="../index.html#generator" class="no-underline inline-block px-8 py-4 bg-indigo-600 text-white font-bold rounded-lg w-full text-center">Generate Testable Prompts</a>
+
+        <div class="mt-16 bg-slate-900 rounded-2xl p-8 text-center text-white">
+            <h3 class="text-2xl font-bold mb-4">Start with Testable Output</h3>
+            <p class="text-slate-400 mb-8 max-w-lg mx-auto">
+                The easiest way to pass tests is to enforce structure. Our Generator outputs JSON-structured prompts by default.
+            </p>
+            <a href="../index.html#generator" class="inline-block px-8 py-4 bg-indigo-600 hover:bg-indigo-700 font-bold rounded-lg transition shadow-lg shadow-indigo-500/50">
+                Generate JSON Prompts
+            </a>
+        </div>
     </article>
+
+    <footer class="bg-white py-12 border-t border-slate-200 mt-12">
+        <div class="max-w-4xl mx-auto px-4 text-center text-slate-500">
+            <p>&copy; 2026 Prompt Mastery Hub.</p>
+        </div>
+    </footer>
+
+    <script>
+        function runTest() {
+            const console = document.getElementById('test-output');
+            const btn = document.getElementById('run-btn');
+            
+            btn.innerText = "Running...";
+            btn.classList.add('opacity-50');
+            console.innerHTML = '<span class="text-slate-500">Running 1 test...</span>';
+
+            setTimeout(() => {
+                console.innerHTML += '<br><span class="text-green-500">.</span>';
+            }, 500);
+
+            setTimeout(() => {
+                console.innerHTML += '<br><br><span class="text-green-400 font-bold">PASSED</span> (0.42s)';
+                console.innerHTML += '<br><span class="text-slate-400">1 passed in 0.45s</span>';
+                btn.innerText = "Run Test";
+                btn.classList.remove('opacity-50');
+            }, 1000);
+        }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Unit Testing Prompts: Moving Beyond 'Vibes'",
+      "image": "https://prompt-mastery-hub.netlify.app/og-image.svg",
+      "author": { "@type": "Organization", "name": "PromptHub" },
+      "datePublished": "2026-01-12",
+      "description": "Guide to automated unit testing for LLM prompts."
+    }
+    </script>
 </body>
 </html>

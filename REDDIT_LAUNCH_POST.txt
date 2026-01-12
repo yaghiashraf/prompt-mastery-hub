@@ -1,0 +1,42 @@
+**Title:** I built a free tool to generate "DEPTH" prompts (security, performance, logic) for coding tasks. No more "lazy" ChatGPT code.
+
+**Body:**
+
+Hey r/PromptEngineering,
+
+Like many of you, I got tired of ChatGPT giving me "tutorial-level" code that ignores edge cases, security, and performance. I realized the issue wasn't the model (GPT-4/Claude 3.5 are capable), but the context I was providing.
+
+I spent the last few weeks researching frameworks like **Chain-of-Thought (CoT)** and the **DEPTH Framework** (Define, Establish, Provide, Task, Human) to force reliability.
+
+I built a free tool to automate this structure so I don't have to type it out every time.
+
+**The Tool:** [PromptHub](https://prompt-mastery-hub.netlify.app/)
+**The Logic:** [See the Diff (Basic vs. DEPTH)](https://prompt-mastery-hub.netlify.app/blog/depth-vs-basic.html)
+
+### How it works (The Engine)
+It's a client-side generator (no API keys required) that uses a deterministic template engine.
+
+1.  **You Input:** "Senior Python Dev", "Write a file downloader".
+2.  **It Analyzes:** Detects "Dev" role -> Assigns "Security Auditor" & "Performance Specialist" to the panel.
+3.  **It Generates:** A markdown prompt that forces the LLM to:
+    *   Simulate a debate between the experts.
+    *   Define success metrics (e.g., "Must handle 10GB files", "Must verify SSL").
+    *   Critique its own draft before outputting code.
+
+### The Result
+Instead of:
+> *"Here is `requests.get(url).content`"* (which crashes RAM on large files)
+
+You get:
+> *"Here is a streaming implementation with `shutil.copyfileobj`, timeout handling, and SSL verification."*
+
+### Features
+*   **Smart Persona Assignment:** Dynamic expert panels based on your role input.
+*   **CoT Scratchpad:** Forces "thinking" steps before the final answer.
+*   **Developer Showcase:** [See CI/CD integration examples](https://prompt-mastery-hub.netlify.app/showcase.html)
+
+It's free to use the generator. I added a "Pro" tier for some advanced recursive templates, but the core engine is open.
+
+Would love feedback on the generated prompt structures. Does the "Expert Panel" simulation improve your outputs as much as it did mine?
+
+**Link:** [https://prompt-mastery-hub.netlify.app/](https://prompt-mastery-hub.netlify.app/)
