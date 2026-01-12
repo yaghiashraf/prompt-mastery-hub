@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prompt Mastery Hub | Enterprise Grade AI Templates</title>
+    <title>Prompt Mastery Hub | Engineer Reliability into AI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script>
@@ -31,11 +31,11 @@
                     <span class="font-bold text-xl tracking-tight text-slate-900">PromptHub</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-slate-500 hover:text-primary transition">Features</a>
-                    <a href="#templates" class="text-slate-500 hover:text-primary transition">Templates</a>
+                    <a href="#features" class="text-slate-500 hover:text-primary transition">Frameworks</a>
+                    <a href="#generator" class="text-slate-500 hover:text-primary transition">Generator</a>
                     <a href="#pricing" class="text-slate-500 hover:text-primary transition">Pricing</a>
                     <a href="https://github.com/yaghiashraf/prompt-mastery-hub" class="text-slate-500 hover:text-slate-900"><i class="fab fa-github text-xl"></i></a>
-                    <a href="#pricing" class="bg-primary hover:bg-indigo-700 text-white px-5 py-2 rounded-full font-medium transition shadow-lg shadow-indigo-500/30">Get Started</a>
+                    <a href="#generator" class="bg-primary hover:bg-indigo-700 text-white px-5 py-2 rounded-full font-medium transition shadow-lg shadow-indigo-500/30">Build a Prompt</a>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="flex items-center md:hidden">
@@ -52,21 +52,21 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
             <div class="inline-flex items-center px-4 py-2 rounded-full bg-indigo-50 text-indigo-700 text-sm font-semibold mb-8 border border-indigo-100">
                 <span class="flex h-2 w-2 rounded-full bg-indigo-600 mr-2"></span>
-                v2.0 Now Available
+                v2.0: Now with DEPTH Engine
             </div>
             <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8">
-                Master the Art of <br>
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">AI Communication</span>
+                Engineer Reliability <br>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">Into Your AI Workflow</span>
             </h1>
             <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600 mb-10">
-                Stop accepting mediocre AI outputs. Access our curated library of research-backed frameworks like <strong>DEPTH</strong> and <strong>KERNEL</strong> to engineer reliability.
+                Eliminate hallucinations and generic responses. Use research-backed architectures like <strong>DEPTH</strong> and <strong>Chain-of-Thought</strong> to force structure, reasoning, and precision.
             </p>
             <div class="flex justify-center gap-4">
-                <a href="#pricing" class="px-8 py-4 bg-primary text-white rounded-lg font-bold text-lg hover:bg-indigo-700 transition shadow-xl hover:shadow-2xl hover:-translate-y-1 transform duration-200">
-                    Get Full Access
+                <a href="#generator" class="px-8 py-4 bg-primary text-white rounded-lg font-bold text-lg hover:bg-indigo-700 transition shadow-xl hover:shadow-2xl hover:-translate-y-1 transform duration-200">
+                    Build a Production Prompt
                 </a>
-                <a href="https://github.com/yaghiashraf/prompt-mastery-hub" class="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-lg font-bold text-lg hover:bg-slate-50 transition">
-                    View on GitHub
+                <a href="#pricing" class="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-lg font-bold text-lg hover:bg-slate-50 transition">
+                    Unlock Template Library
                 </a>
             </div>
         </div>
@@ -87,57 +87,58 @@
                 <!-- Input Panel -->
                 <div class="w-full md:w-1/2 p-8 bg-slate-50 border-r border-slate-200 overflow-y-auto">
                     <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-xl font-bold text-slate-800"><i class="fas fa-sliders-h mr-2 text-primary"></i> Configure Prompt</h3>
+                        <h3 class="text-xl font-bold text-slate-800"><i class="fas fa-sliders-h mr-2 text-primary"></i> Prompt Configuration Engine</h3>
                         <span class="text-xs font-mono text-slate-400">v1.0.0</span>
                     </div>
+                    <p class="text-sm text-slate-500 mb-6">Define your parameters below to generate a structurally sound prompt.</p>
 
                     <form id="promptForm" class="space-y-4">
                         <!-- Framework Selector -->
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Framework</label>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Architecture / Framework</label>
                             <select id="framework" class="w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-2 px-3 border bg-white">
-                                <option value="BASIC">Basic (3-Step)</option>
+                                <option value="BASIC">Standard (3-Step)</option>
                                 <option value="COT">Chain of Thought (Reasoning)</option>
-                                <option value="DEPTH">DEPTH (Complex Tasks)</option>
+                                <option value="DEPTH">DEPTH (Complex Multi-Agent)</option>
                             </select>
                         </div>
 
                         <!-- Role -->
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-1">Role / Persona</label>
-                            <input type="text" id="role" placeholder="e.g. Senior Python Developer" class="w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-2 px-3 border">
+                            <input type="text" id="role" placeholder="e.g. Senior Python Backend Engineer" class="w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-2 px-3 border">
                         </div>
 
                         <!-- Task -->
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Task</label>
-                            <input type="text" id="task" placeholder="e.g. Write a unit test for a login API" class="w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-2 px-3 border">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Task Specification</label>
+                            <input type="text" id="task" placeholder="e.g. Refactor legacy auth middleware for asyncio" class="w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-2 px-3 border">
                         </div>
 
                         <!-- Context -->
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Context / Data</label>
-                            <textarea id="context" rows="3" placeholder="Paste relevant code, data, or background info here..." class="w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-2 px-3 border"></textarea>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Context / Data Source</label>
+                            <textarea id="context" rows="3" placeholder="Paste relevant code, logs, or business constraints..." class="w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-2 px-3 border"></textarea>
                         </div>
 
                         <div class="grid grid-cols-2 gap-4">
                             <!-- Tone -->
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Tone</label>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Output Tone</label>
                                 <select id="tone" class="w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-2 px-3 border bg-white">
                                     <option value="Professional">Professional</option>
-                                    <option value="Casual">Casual</option>
+                                    <option value="Technical">Technical / Concise</option>
                                     <option value="Academic">Academic</option>
                                     <option value="Persuasive">Persuasive</option>
                                 </select>
                             </div>
                             <!-- Format -->
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Format</label>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Output Format</label>
                                 <select id="format" class="w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-2 px-3 border bg-white">
                                     <option value="Markdown">Markdown</option>
-                                    <option value="JSON">JSON</option>
-                                    <option value="Table">Table</option>
+                                    <option value="JSON">JSON Schema</option>
+                                    <option value="Table">Structured Table</option>
                                     <option value="Plain Text">Plain Text</option>
                                 </select>
                             </div>
@@ -148,17 +149,17 @@
                 <!-- Output Panel -->
                 <div class="w-full md:w-1/2 bg-slate-900 p-8 flex flex-col relative">
                     <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-white"><i class="fas fa-code mr-2 text-green-400"></i> Generated Prompt</h3>
+                        <h3 class="text-xl font-bold text-white"><i class="fas fa-terminal mr-2 text-green-400"></i> Generated Artifact</h3>
                         <button onclick="copyPrompt()" class="text-sm bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded transition border border-slate-600">
-                            <i class="far fa-copy mr-1"></i> Copy
+                            <i class="far fa-copy mr-1"></i> Copy to Clipboard
                         </button>
                     </div>
                     
                     <div class="flex-grow relative">
-                        <textarea id="output" readonly class="w-full h-full bg-slate-800 text-slate-300 font-mono text-sm p-4 rounded-lg border border-slate-700 focus:outline-none resize-none"></textarea>
+                        <textarea id="output" readonly class="w-full h-full bg-slate-800 text-slate-300 font-mono text-sm p-4 rounded-lg border border-slate-700 focus:outline-none resize-none" spellcheck="false"></textarea>
                         <!-- Badge -->
                         <div class="absolute bottom-4 right-4 text-xs text-slate-500 pointer-events-none">
-                            Powered by PromptEngine™
+                            Powered by PromptEngine™ Core
                         </div>
                     </div>
                 </div>
@@ -211,34 +212,34 @@
     <section id="features" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-primary font-semibold tracking-wide uppercase">Why Prompt Engineering?</h2>
-                <p class="mt-2 text-3xl font-extrabold text-slate-900">Precision in, Excellence out.</p>
+                <h2 class="text-primary font-semibold tracking-wide uppercase">The Architecture</h2>
+                <p class="mt-2 text-3xl font-extrabold text-slate-900">Why Structured Prompts Win.</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-10">
                 <!-- Card 1 -->
                 <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition">
                     <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6">
-                        <i class="fas fa-shapes text-xl"></i>
+                        <i class="fas fa-layer-group text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Structured Frameworks</h3>
-                    <p class="text-slate-600">Don't guess. Use the DEPTH framework to force the AI to think through multiple perspectives before answering.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Orchestrate Experts</h3>
+                    <p class="text-slate-600">Don't just ask a question. Use the <strong>DEPTH</strong> framework to simulate a panel of experts debating the best solution before answering.</p>
                 </div>
                 <!-- Card 2 -->
                 <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition">
                     <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6">
-                        <i class="fas fa-recycle text-xl"></i>
+                        <i class="fas fa-sync-alt text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Recursive Improvement</h3>
-                    <p class="text-slate-600">Automate quality control. Our templates include "Self-Critique" loops that fix errors before you see them.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Self-Healing Workflows</h3>
+                    <p class="text-slate-600">Automate quality control. Our advanced templates include <strong>Recursive Critique</strong> loops that identify and fix errors in real-time.</p>
                 </div>
                 <!-- Card 3 -->
                 <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition">
                     <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6">
                         <i class="fas fa-code-branch text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Version Control</h3>
-                    <p class="text-slate-600">Treat prompts like code. Our repository structure is designed for Git, allowing teams to collaborate on prompts.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Git-Native Control</h3>
+                    <p class="text-slate-600">Treat prompts like code. Our repository structure allows you to version, branch, and merge your prompt strategies just like software.</p>
                 </div>
             </div>
         </div>
@@ -248,43 +249,43 @@
     <section id="pricing" class="py-24 bg-slate-900 text-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Simple, Transparent Pricing</h2>
-                <p class="text-slate-400 text-xl max-w-2xl mx-auto">Start with the basics, upgrade for the power tools.</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Scalable Access</h2>
+                <p class="text-slate-400 text-xl max-w-2xl mx-auto">From individual developers to enterprise teams.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <!-- Free Tier -->
                 <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:border-slate-600 transition flex flex-col">
                     <div class="mb-4">
-                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs font-semibold uppercase">Starter</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs font-semibold uppercase">Community</span>
                     </div>
                     <h3 class="text-2xl font-bold mb-2">Open Source</h3>
                     <div class="text-4xl font-extrabold mb-6">$0</div>
-                    <p class="text-slate-400 mb-8 flex-grow">Perfect for individuals just starting to explore structured prompting.</p>
+                    <p class="text-slate-400 mb-8 flex-grow">Perfect for developers just starting to explore structured prompting.</p>
                     <ul class="space-y-4 mb-8 text-slate-300">
                         <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i> Basic Templates</li>
                         <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i> The 3-Step Framework</li>
                         <li class="flex items-center"><i class="fas fa-check text-green-400 mr-3"></i> Community Support</li>
                     </ul>
-                    <a href="https://github.com/yaghiashraf/prompt-mastery-hub" class="block w-full py-3 px-6 bg-slate-700 hover:bg-slate-600 text-center rounded-lg font-bold transition">View Repo</a>
+                    <a href="https://github.com/yaghiashraf/prompt-mastery-hub" class="block w-full py-3 px-6 bg-slate-700 hover:bg-slate-600 text-center rounded-lg font-bold transition">View Source</a>
                 </div>
 
                 <!-- Pro Tier (Highlighted) -->
                 <div class="bg-indigo-600 rounded-2xl p-8 border border-indigo-500 transform md:-translate-y-4 shadow-2xl flex flex-col relative">
-                    <div class="absolute top-0 right-0 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">POPULAR</div>
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">MOST POPULAR</div>
                     <div class="mb-4">
                         <span class="px-3 py-1 bg-indigo-500 text-white rounded-full text-xs font-semibold uppercase">Professional</span>
                     </div>
                     <h3 class="text-2xl font-bold mb-2">Power User</h3>
                     <div class="text-4xl font-extrabold mb-6">$9<span class="text-lg font-normal text-indigo-200">/mo</span></div>
-                    <p class="text-indigo-100 mb-8 flex-grow">For developers and creators who need consistent, high-quality results.</p>
+                    <p class="text-indigo-100 mb-8 flex-grow">For engineers who need consistent, high-quality results.</p>
                     <ul class="space-y-4 mb-8 text-white">
-                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i> Everything in Free</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i> Everything in Community</li>
                         <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i> <strong>DEPTH</strong> & <strong>KERNEL</strong> Frameworks</li>
                         <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i> Recursive Agents</li>
                         <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i> Weekly New Prompts</li>
                     </ul>
-                    <a href="#" class="block w-full py-3 px-6 bg-white text-indigo-600 hover:bg-indigo-50 text-center rounded-lg font-bold transition">Start Free Trial</a>
+                    <a href="premium-preview.html" class="block w-full py-3 px-6 bg-white text-indigo-600 hover:bg-indigo-50 text-center rounded-lg font-bold transition">Start Free Trial</a>
                 </div>
 
                 <!-- Enterprise Tier -->
@@ -292,7 +293,7 @@
                     <div class="mb-4">
                         <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs font-semibold uppercase">Team</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">Agency</h3>
+                    <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
                     <div class="text-4xl font-extrabold mb-6">$49<span class="text-lg font-normal text-slate-400">/mo</span></div>
                     <p class="text-slate-400 mb-8 flex-grow">Automate your team's workflow with shared libraries.</p>
                     <ul class="space-y-4 mb-8 text-slate-300">
